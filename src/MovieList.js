@@ -5,8 +5,7 @@ const MovieList = () => {
   const [movies, setmovies] = useState([]);
   let [page, setpage] = useState(1);
   const [loader, setLoader] = useState(false);
-  // const [scrollTop, setSrollTop] = useState(false);
-  console.log(movies);
+  
   const ApiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`;
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const MovieList = () => {
         )}
       </div>
 
-      <div
+      {movies.length > 0 ? <div
         className={loader ? "loadmore loading" : "loadmore"}
         onClick={() => {
           setpage(page + 1);
@@ -52,7 +51,7 @@ const MovieList = () => {
       >
         Load more
         {loader ? <div className="loader"></div> : ""}
-      </div>
+      </div>: null}
 
       {/* {scrollTop ? <div id="goto"></div> : ""} */}
     </React.Fragment>

@@ -43,23 +43,21 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 0 -15px;
+  padding: 0 15px;
 }
 .card {
   border-radius: 10px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-  flex: 0 0 23%;
   height: 450px;
   margin-bottom: 25px;
   position: relative;
   padding: 25px;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: end;
   align-items: flex-end;
-  -webkit-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
   overflow: hidden;
   cursor: pointer;
+  flex: 0 0 270px;
 }
 .card::before {
   content: "";
